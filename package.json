@@ -1,0 +1,9 @@
+{
+  "name": "gql",
+  "version": "1.0.0",
+  "description": "Movie API with graph-ql",
+  "main": "index.js",
+  "repository": "https://github.com/danpa725/graph-ql",
+  "author": "June <danpa725@cau.ac.kr>",
+  "license": "MIT"
+}
