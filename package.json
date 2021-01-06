@@ -5,5 +5,8 @@
   "main": "index.js",
   "repository": "https://github.com/danpa725/graph-ql",
   "author": "June <danpa725@cau.ac.kr>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "graphql-yoga": "^1.18.3"
+  }
 }
