@@ -1,0 +1,13 @@
+type Person {
+    id: Int!
+    name: String!
+    age: Int!
+    gender: String!
+}
+
+type Query {
+    people: [Person]!
+    person(id: Int!): Person
+}
+
+##! 보내는 정보는 QUERY
