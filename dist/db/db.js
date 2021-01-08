@@ -1,49 +1,22 @@
 "use strict";
-//! 어떠한 종류의 db를 사용하던 상관 없음
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.getById = void 0;
-const people = [
-    {
-        id: 1,
-        age: 22,
-        gender: "male",
-        name: "june",
-    },
-    {
-        id: 2,
-        age: 21,
-        gender: "female",
-        name: "junae",
-    },
-    {
-        id: 3,
-        age: 22,
-        gender: "female",
-        name: "jfefune",
-    },
-    {
-        id: 4,
-        age: 22,
-        gender: "male",
-        name: "junfee",
-    },
-    {
-        id: 5,
-        age: 22,
-        gender: "male",
-        name: "aadjune",
-    },
-    {
-        id: 6,
-        age: 25,
-        gender: "male",
-        name: "juandsadae",
-    },
-];
-exports.default = people;
-const getById = (id) => {
-    const filteredPeople = people.filter((idx) => id === idx.id);
-    return filteredPeople[0];
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-exports.getById = getById;
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.getMovies = void 0;
+const node_fetch_1 = __importDefault(require("node-fetch"));
+const API_URL = "https://yts.mx/api/v2/list_movies.json";
+const getMovies = (limit, rating) => {
+    let REQUEST_URL = API_URL;
+    if (limit > 0) {
+        REQUEST_URL += `?limit=${limit}`;
+    }
+    if (rating > 0) {
+        REQUEST_URL += `&minimum_rating=${rating}`;
+    }
+    return node_fetch_1.default(`${REQUEST_URL}`)
+        .then((res) => res.json())
+        .then((json) => json.data.movies);
+};
+exports.getMovies = getMovies;
 //# sourceMappingURL=db.js.map
