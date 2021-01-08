@@ -13,5 +13,8 @@
   },
   "scripts": {
     "start": "tsc-watch --onSuccess \"node dist/index.js\" "
+  },
+  "dependencies": {
+    "node-fetch": "^2.6.1"
   }
 }
